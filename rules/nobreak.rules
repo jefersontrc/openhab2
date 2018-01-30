@@ -1,0 +1,39 @@
+rule "BatteryIcon Nobreak"
+      when
+		Item Nobreak_Tension received update
+      then
+	   if(Nobreak_Tension.state < 10 )
+		postUpdate(Nobreak_Icon, 0)
+           if (Nobreak_Tension.state >=10 && Nobreak_Tension.state <10.3)
+		postUpdate(Nobreak_Icon, 10)
+           if (Nobreak_Tension.state >=10.3 && Nobreak_Tension.state <10.6)
+          	postUpdate(Nobreak_Icon, 20)
+           if (Nobreak_Tension.state >=10.6 && Nobreak_Tension.state <10.9)
+          	postUpdate(Nobreak_Icon, 30) 
+           if (Nobreak_Tension.state >=10.9 && Nobreak_Tension.state <11.2)
+          	postUpdate(Nobreak_Icon, 40) 
+           if (Nobreak_Tension.state >=11.2 && Nobreak_Tension.state <11.5)
+          	postUpdate(Nobreak_Icon, 50) 
+           if (Nobreak_Tension.state >=11.5 && Nobreak_Tension.state <11.8)
+          	postUpdate(Nobreak_Icon, 60) 
+	   if (Nobreak_Tension.state >=11.8 && Nobreak_Tension.state <12.1)
+          	postUpdate(Nobreak_Icon, 70) 
+           if (Nobreak_Tension.state >=12.1 && Nobreak_Tension.state <12.4)
+          	postUpdate(Nobreak_Icon, 80) 
+           if (Nobreak_Tension.state >=12.3 && Nobreak_Tension.state <12.7)
+          	postUpdate(Nobreak_Icon, 90) 
+           if (Nobreak_Tension.state >=12.7 && Nobreak_Tension.state <13)
+          	postUpdate(Nobreak_Icon, 100) 
+
+
+
+
+
+
+
+
+
+
+end 
+     
+

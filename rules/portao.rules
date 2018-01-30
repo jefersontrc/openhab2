@@ -1,0 +1,81 @@
+var SLEEP_TIME = 1500
+rule "comando portao"
+	when
+		Item Portao received command
+	then
+		if(receivedCommand == ON){
+			Thread::sleep(SLEEP_TIME)
+          	sendCommand(Portao, OFF)
+		}
+end
+
+rule "estado portao aberto"
+	when
+		Item Portao received update ON
+	then
+		var i = 0
+               	while(i <= 15000){
+			if(i == 1500){
+				postUpdate(PGrande, 90)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 3000){
+				postUpdate(PGrande, 80)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 4500){
+				postUpdate(PGrande, 70)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 6000){
+				postUpdate(PGrande, 60)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 7500){
+				postUpdate(PGrande, 50)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 9000){
+				postUpdate(PGrande, 40)
+				Thread::sleep(SLEEP_TIME)
+			}
+		        if(i == 10500){
+				postUpdate(PGrande, 30)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 12000){
+				postUpdate(PGrande, 20)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 13500){
+				postUpdate(PGrande, 10)
+				Thread::sleep(SLEEP_TIME)
+			}
+			if(i == 15000){
+				postUpdate(PGrande, 0)
+				Thread::sleep(SLEEP_TIME)
+			}
+			i=i+1
+	}
+	end
+rule "estado portao fechado"
+	when
+		Item Portao received update OFF
+	then
+		postUpdate(PGrande, 100)
+end
+
+rule "email estado do portao"
+	when
+		Item Portao received command ON
+	then
+		sendMail("jeferson.trc@gmail.com","Ultron","Comando Portão foi acionado")
+end
+	      
+rule "Estado do portao"
+when
+	Item Portao received update ON
+then
+	LGWebOSTV_Toast.sendCommand("O portao foi aberto")
+        postUpdate(Garagem, ON)
+end

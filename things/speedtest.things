@@ -1,0 +1,2 @@
+Thing exec:command:speedtest [ command="/usr/bin/speedtest-cli --server 1201 --simple", interval=7200, timeout=60 ]
+

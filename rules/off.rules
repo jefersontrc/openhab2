@@ -1,0 +1,67 @@
+var SLEEP_TIME = 1500
+
+rule "comando offall"
+	when
+		Item offall received command
+	then
+		if(receivedCommand == OFF){
+			LGWebOSTV_Toast.sendCommand("Desligamento Total Espaco Gourmet")
+          		sendCommand(Portao, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Garagem, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Suite, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Decorativa2, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Exaustor, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Balcao, OFF)
+			Thread::sleep(SLEEP_TIME)		
+			sendCommand(Churras, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Balcao, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Leds1, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Leds2, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Leds3, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Leds4, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Tomada1, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Tomada2, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Tomada3, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Tomada4, OFF)
+			Thread::sleep(SLEEP_TIME)
+			sendCommand(Dispensa, OFF)
+	
+	}
+end
+
+rule "estado off all"
+when
+	Item Garagem received command ON or
+	Item Suite received command ON or
+	Item Decorativa2 received command ON or
+	Item Exaustor received command ON or
+ 	Item Balcao received command ON or
+	Item Churras received command ON or
+	Item Leds1 received command ON or
+	Item Leds2 received command ON or
+	Item Leds3 received command ON	or
+	Item Leds4 received command ON or
+	Item Tomada1 received command ON or
+	Item Tomada2 received command ON or
+	Item Tomada3 received command ON or
+	Item Tomada4 received command ON or
+	Item Dispensa received command ON
+
+
+then
+        postUpdate(offall, ON)
+end

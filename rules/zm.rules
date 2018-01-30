@@ -1,0 +1,101 @@
+rule "Monitor1 Alarm State"
+when
+    Item zmMonitor1_EventState changed
+then
+	if (zmMonitor1_EventState.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm started")
+	}
+	else if (zmMonitor1_EventState.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm stopped")
+	}	
+end
+
+rule "Monitor1 Recording State"
+when
+    Item zmMonitor1_Recording changed
+then
+	if (zmMonitor1_Recording.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder recording started")
+	}
+	else if (zmMonitor1_Recording.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder recording stopped")
+	}	
+end
+
+rule "Monitor2 Alarm State"
+when
+    Item zmMonitor2_EventState changed
+then
+	if (zmMonitor2_EventState.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm started")
+	}
+	else if (zmMonitor2_EventState.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm stopped")
+	}	
+end
+
+rule "Monitor2 Recording State"
+when
+    Item zmMonitor2_Recording changed
+then
+	if (zmMonitor2_Recording.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder recording started")
+	}
+	else if (zmMonitor2_Recording.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder recording stopped")
+	}	
+end
+
+
+
+
+
+rule "Monitor3 Alarm State"
+when
+    Item zmMonitor3_EventState changed
+then
+	if (zmMonitor3_EventState.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm started")
+	}
+	else if (zmMonitor3_EventState.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm stopped")
+	}	
+end
+
+rule "Monitor3 Recording State"
+when
+    Item zmMonitor3_Recording changed
+then
+	if (zmMonitor3_Recording.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder recording started")
+	}
+	else if (zmMonitor3_Recording.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder recording stopped")
+	}	
+end
+
+
+
+rule "Monitor4 Alarm State"
+when
+    Item zmMonitor4_EventState changed
+then
+	if (zmMonitor4_EventState.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm started")
+	}
+	else if (zmMonitor4_EventState.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder Alarm stopped")
+	}	
+end
+
+rule "Monitor4 Recording State"
+when
+    Item zmMonitor4_Recording changed
+then
+	if (zmMonitor4_Recording.state == ON) {
+		logInfo("zoneminder.rules", "ZoneMinder recording started")
+	}
+	else if (zmMonitor4_Recording.state == OFF) {
+		logInfo("zoneminder.rules", "ZoneMinder recording stopped")
+	}	
+end

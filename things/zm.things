@@ -1,0 +1,7 @@
+Bridge zoneminder:172.16.1.130:ZoneMinderSample [ hostname="172.16.1.130", user="jeferson", password="2205pwmS", telnet_port=6802, refresh_interval_disk_usage=1 ]
+{
+	Thing monitor monitor_1 [ monitorId=1, monitorTriggerTimeout=120, monitorEventText="Trigger activated from openHAB" ]
+	Thing monitor monitor_2 [ monitorId=2, monitorTriggerTimeout=120, monitorEventText="Trigger activated from openHAB" ]
+	Thing monitor monitor_3 [ monitorId=3, monitorTriggerTimeout=120, monitorEventText="Trigger activated from openHAB" ]
+        Thing monitor monitor_3 [ monitorId=3, monitorTriggerTimeout=120, monitorEventText="Trigger activated from openHAB" ]    
+}

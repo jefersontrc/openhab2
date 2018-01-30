@@ -1,0 +1,7 @@
+Group Speedtest <"network"> 
+Switch Speedtest_Run "Speedtest running ... [%s]" <"speedtest_reload2"> { channel="exec:command:speedtest:run"} 
+String Speedtest_Output <"speedtest_download"> { channel="exec:command:speedtest:output"}
+String Speedtest_Input <"speedtest_upload"> { channel="exec:command:speedtest:input"} 
+Number Speedtest_Exit { channel="exec:command:speedtest:exit"}
+DateTime Speedtest_LastExecution { channel="exec:command:speedtest:lastexecution" }
+

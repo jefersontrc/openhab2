@@ -1,0 +1,31 @@
+Group eletric_current
+Number Energy_Current_Fase1 "A Fase1 [%.2f]" <energy> (eletric_current) ["CurrentEletric"] {mqtt="<[mqtt:sensor1/fase1/eletric_current:state:default]"}
+Number Energy_Current_Fase2 "A Fase2 [%.2f]" <energy> (eletric_current) ["CurrentEletric2"] {mqtt="<[mqtt:sensor2/fase2/eletric_current:state:default]"}
+
+Group eletric_tension
+Number Energy_Tension_Fase1 "V Fase1 [%.2f]" <energy> (eletric_tension) ["CurrentTension"] {mqtt="<[mqtt:sensor1/fase1/eletric_tension:state:default]"}
+Number Energy_Tension_Fase2 "V Fase2 [%.2f]" <energy> (eletric_tension) ["CurrentTension2"] {mqtt="<[mqtt:sensor2/fase2/eletric_tension:state:default]"}
+
+
+Group eletric_watts 
+Number Energy_Watts_Fase1 "W Fase1 [%.2f]" <energy> (eletric_watts) ["CurrentWatts"] {mqtt="<[mqtt:sensor1/fase1/eletric_watts:state:default]"}
+Number Energy_Watts_Fase2 "W Fase2 [%.2f]" <energy> (eletric_watts) ["CurrentWatts2"] {mqtt="<[mqtt:sensor2/fase2/eletric_watts:state:default]"}
+Number Energy_Watts_Fase3 "Total Watts [%.2f]" <energy> (eletric_watts) ["CurrentSomaWatts"] {mqtt="<[mqtt:sensores/fases/somawatts:state:default]"}
+
+Group Temperature
+Number Indoor_Temp "Temperatura [%.1f ºC]" <temperature> (Temperature) ["CurrentTemperature"] {mqtt="<[mqtt:newdevice/temp1/Temperature:state:default]"}
+Number Indoor_Hum "Humidade [%.0f %%]" <humidity> (Humidity) ["CurrentHumidity"] {mqtt="<[mqtt:newdevice/temp1/Humidity:state:default]"}
+
+Group Jarvis
+Number Jarvis_Temp "CPU [%.1f ºC]" <temperature> (Jarvis) {mqtt="<[mqtt:jarvis/temp:state:default]"}
+
+
+Group Nobreak
+Number Nobreak_Tension "Volts [%.2f V]" <energy> (Nobreak) {mqtt="<[mqtt:sensor/nobreak:state:default]"}
+Number Nobreak_Icon "Porcentagem de Carga [%.0f %%]" <battery>
+
+
+Switch SwitchMqtt {mqtt=">[mqtt:myhome/bedroom/switch1:command:ON:1],>[mqtt:myhome/bedroom/switch1:command:OFF:0],<[mqtt:myhome/bedroom/switch1:state:ON:1],<[mqtt:myhome/bedroom/switch1:state:OFF:0"}
+
+Switch SwitchMqttGPIO {mqtt=">[mqtt:newdevice/gpio/10:command:ON:1],>[mqtt:newdevice/gpio/10:command:OFF:0],<[mqtt:newdevice/gpio/10:state:ON:1],<[mqtt:newdevice/gpio/10:state:OFF:0]"}
+

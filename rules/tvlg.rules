@@ -1,0 +1,18 @@
+rule "Plex"
+	when
+		Item PlexTVStatus changed
+	then
+		if(PlexTVStatus.state == "Playing")
+		sendCommand(Suite, ON)
+		if(PlexTVStatus.state == "Paused")
+		sendCommand(Suite, OFF)
+
+end
+
+rule "Boas Vindas"
+when
+	Item LGWebOSTV_Power changed to ON
+then
+	LGWebOSTV_Toast.sendCommand("Ultron se conectou a TV-LG")
+end
+

@@ -1,0 +1,21 @@
+import org.openhab.model.script.actions.*
+import org.openhab.model.script.actions.Timer
+
+val test=Energy_Tension_Fase1
+
+rule "fase1"
+	when
+		Item Energy_Tension_Fase1 changed
+	then
+		if(Energy_Tension_Fase1.state < 100)
+		sendMail("jeferson.trc@gmail.com","from openhab","Tensão Baixa na Fase 1")
+end
+
+rule "fase1"
+	when
+		Item Energy_Tension_Fase2 changed
+	then
+		if(Energy_Tension_Fase2.state < 100)
+		sendMail("jeferson.trc@gmail.com","from openhab","Tensão Baixa na Fase 2")
+end
+

@@ -1,0 +1,20 @@
+Switch Garagem "Luz Garagem" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:110],>[mqtt:sensor/relay:command:OFF:111]"}
+Switch Suite "Luz Suite" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:112],>[mqtt:sensor/relay:command:OFF:113]"}
+Switch Portao "Portao" <garagedoor> ["Switchable"] {mqtt=">[mqtt:sensor/relay:command:ON:114],>[mqtt:sensor/relay:command:OFF:115]"}
+Number PGrande  "Portao Grande" <garagedoor> 
+Switch Decorativa2 "Decorativa 2" ["homekit:Lighting"]  {mqtt=">[mqtt:sensor/relay:command:ON:116],>[mqtt:sensor/relay:command:OFF:117]"}
+Switch Exaustor  "Ex-Churras" ["Switchable"] {mqtt=">[mqtt:sensor/relay:command:ON:118],>[mqtt:sensor/relay:command:OFF:119]"}
+Switch Churras "Churras" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:120],>[mqtt:sensor/relay:command:OFF:121]"}
+Switch Balcao "Balcao" ["Lighting"]  {mqtt=">[mqtt:sensor/relay:command:ON:122],>[mqtt:sensor/relay:command:OFF:123]"}
+Switch Leds1 "Leds1" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:124],>[mqtt:sensor/relay:command:OFF:125]"}
+Switch Leds2 "Leds2" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:126],>[mqtt:sensor/relay:command:OFF:127]"}
+Switch Leds3 "Leds3" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:128],>[mqtt:sensor/relay:command:OFF:129]"}
+Switch Leds4 "Leds4" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:130],>[mqtt:sensor/relay:command:OFF:131]"}
+Switch Tomada1 "Tomada1" ["Switchable"] {mqtt=">[mqtt:sensor/relay:command:ON:132],>[mqtt:sensor/relay:command:OFF:133]"}
+Switch Tomada2 "Tomada2" ["Switchable"] {mqtt=">[mqtt:sensor/relay:command:ON:134],>[mqtt:sensor/relay:command:OFF:135]"}
+Switch Tomada3 "Tomada 3" ["Switchable"] {mqtt=">[mqtt:sensor/relay:command:ON:136],>[mqtt:sensor/relay:command:OFF:137]"}
+Switch Tomada4 "Tomada 4" ["Switchable"] {mqtt=">[mqtt:sensor/relay:command:ON:138],>[mqtt:sensor/relay:command:OFF:139]"}
+Switch Dispensa "Dispensa" ["Lighting"] {mqtt=">[mqtt:sensor/relay:command:ON:140],>[mqtt:sensor/relay:command:OFF:141]"}
+
+Switch offall "Off All" ["Switchable"]
+

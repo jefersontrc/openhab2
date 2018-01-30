@@ -1,0 +1,110 @@
+sitemap jarvis label="J.A.R.V.I.S" {
+       Frame label="Tempo em Campo Grande"{
+       Text item=TempoCG_Temperature icon=temperature label="Temperatura"
+       Text item=TempoCG_Humidity icon=humidity label="Humidade" valuecolor=[>70="blue",>35="green",<=35="red"]
+
+	}
+
+
+	Frame label="Suite"{
+	
+	Text item=Indoor_Temp icon=temperature label="Temperatura"
+	Text item=Indoor_Hum icon=humidity valuecolor=[>70="blue",>35="green",<=35="red"]
+	Switch item=Suite icon=light	
+	Switch item=TVSamsungLED40_Power label="TV Power"
+	Switch item=TVSamsungLED40_Mute label="TV Mute"
+	Slider item=TVSamsungLED40_Volume label="TV Volume"
+	Text item=TVSamsungLED40_Channel icon=screen label="TV Canal"
+        Text item=TVSamsungLED40_SourceName icon=screen label="TV Program"
+		
+        }
+  Frame label="TV LG"{
+        Switch item=LGWebOSTV_Power label="TV Power"
+        Text item=LGWebOSTV_Channel2 label="TV Channel"
+	Switch item=LGWebOSTV_Mute label="TV Mute"
+	Slider item=LGWebOSTV_Volume label="TV Volume"
+
+
+}
+
+  Frame label="Energia"{
+        Group item=eletric_tension label="Voltagem" icon="energy"
+        Group item=eletric_current label="Amperagem" icon="energy"
+        Group item=eletric_watts label="Watts" icon="energy"
+
+       }
+Frame label="Suite"{
+	Switch item=offall label="Desarme Total" mappings=[OFF="OFF", ON="ON"]  
+        Switch item=Portao
+	Text item=PGrande label="Estado Portao" 
+	Switch item=Garagem icon=light
+        Switch item=Decorativa2 icon=light
+	Switch item=Exaustor icon=fan
+        Switch item=Churras icon=light	
+	Switch item=Balcao icon=light
+        Switch item=Leds1 icon=light
+	Switch item=Leds2 icon=light
+	Switch item=Leds3 icon=light
+	Switch item=Leds4 icon=light	
+        Switch item=Tomada1 icon=poweroutlet
+	Switch item=Tomada2 icon=poweroutlet
+        Switch item=Tomada3 icon=poweroutlet
+	Switch item=Tomada4 icon=poweroutlet
+        Switch item=Dispensa icon=light
+
+	}
+   Frame label="Plex-LG"
+  	{
+                Switch item=PlexTVPower
+                Text item=PlexTVStatus
+        	Slider item=PlexTVProgress
+                Setpoint item=PlexTVProgress visibility=[PlexTVStatus!="Stopped"] minValue=0 maxValue=100 step=1
+                Text item=PlexTVEndTime visibility=[PlexTVStatus!="Stopped"]
+                Text item=PlexTVTitle visibility=[PlexTVStatus!="Stopped"]
+                Text item=PlexTVType visibility=[PlexTVStatus!="Stopped"]
+                Switch item=PlexTVPause
+                Switch item=PlexTVPlay
+        }
+
+     Frame label="Plex-Samsung"
+        {
+                Switch item=Samsumg_PlexTVPower
+                Text item=Samsumg_PlexTVStatus
+                Text item=Samsumg_PlexTVTitle
+            
+
+        }
+
+  Frame label="Jarvis"
+	{
+		Text item=Jarvis_Temp icon=temperature label="Temperatura CPU"
+
+	}	
+
+  Frame label="Nobreak"
+	{
+                Text item=Nobreak_Tension label="Voltagem Bateria"
+                Text item=Nobreak_Icon label="Carga da Bateria %"
+	}	
+
+
+
+
+
+	Frame label="ZM-Server"
+	 {
+		Text item=ZoneMinderServer_Online label="Status [%s]" 
+		Text item=ZoneMinderServer_CPULoad label="Load [%s]"
+	 }
+	Frame label="ZM-Cameras - Recording"
+	{
+		Switch item=ZoneMinderMonitorFundos_RecordingStatus label="Fundos"
+		Switch item=ZoneMinderMonitorGarage_RecordingStatus label="Garagem"
+	       	Switch item=ZoneMinderMonitorLateral_RecordingStatus label="Lateral"
+		Switch item=ZoneMinderMonitorPortao_RecordingStatus label="Portao"
+
+	}
+}
+
+
+
